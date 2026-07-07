@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Tanjay City | LGU Offices
+  </title>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Top Utility Bar -->
+  <div class="utility-bar">
+   <a id="hotline-trigger">
+    Emergency Hotline Numbers
+   </a>
+  </div>
+  <!-- Header Banner Layout Block -->
+  <header class="header-banner">
+   <!-- Background Layer -->
+   <img alt="NGC Background" class="background" src="https://i.imgur.com/U26gio6.jpeg"/>
+   <!-- Foreground Visual Layer -->
+   <img alt="Tanjay City Logo" class="header-logo-left" src="https://i.imgur.com/vXFYds0.png"/>
+   <h1 class="header-text">
+    TANJAY CITY
+   </h1>
+   <img alt="Display Image" class="header-logo-right" src="https://i.imgur.com/T9ymS5A.png"/>
+  </header>
+  <!-- Navigation Menu -->
+  <nav>
+   <ul>
+    <ul>
+     <li>
+      <a href="https://script.google.com/macros/s/AKfycbwpmT5SQsNYeERDNzUIxVtwyw3cL7W6gAXnrNTBs6qN/dev" rel="noopener noreferrer" target="_blank">
+       Home
+      </a>
+     </li>
+     <li class="dropdown">
+      <a class="dropbtn" href="#">
+       Services
+       <span class="arrow">
+        ▾
+       </span>
+      </a>
+      <div class="dropdown-content">
+       <a href="https://script.google.com/macros/s/AKfycbw-2vVOUsnjR5KU_D_m0A4PEjoISZ_FWwB2rI6TT_cq/dev" rel="noopener noreferrer" target="_blank">
+        1. Check in
+       </a>
+       <a href="https://script.google.com/macros/s/AKfycbw-2vVOUsnjR5KU_D_m0A4PEjoISZ_FWwB2rI6TT_cq/dev?page=monitor" rel="noopener noreferrer" target="_blank">
+        2. Queue
+       </a>
+      </div>
+     </li>
+    </ul>
+    <li>
+     <a href="#">
+      Status
+     </a>
+    </li>
+    <li>
+     <a href="https://script.google.com/macros/s/AKfycbwpmT5SQsNYeERDNzUIxVtwyw3cL7W6gAXnrNTBs6qN/dev?page=monitor" rel="noopener noreferrer" target="_blank">
+      Offices
+     </a>
+    </li>
+    <li>
+     <a href="https://www.facebook.com/OrlinoPepe" target="_blank">
+      Facebook
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <!-- Video Hero Section Area -->
+  <section class="featured">
+   <div class="video-stream-panel">
+    <video autoplay="" id="tanjayHymnVideo" loop="" muted="" playsinline="">
+     <source src="https://www.dropbox.com/scl/fi/sgt1urshb1cze6ee0le3a/NGC.mp4?rlkey=gkam4h6v40oewkpb74sz9y3fw&amp;st=ze09bomr&amp;raw=1" type="video/mp4"/>
+     Your browser does not support the video tag.
+    </video>
+   </div>
+   <h1>
+    Welcome to Tanjay Web Portal
+   </h1>
+   <p>
+    The official website of Tanjay Government Center, Tanjay City.
+   </p>
+   <button style="padding: 12px 24px; background: #d9534f; color: white; border: none; cursor: pointer; font-weight: bold; font-size: 1em; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    Enter Mainsite
+   </button>
+  </section>
+  <!-- Main Dynamic Container Grid Content -->
+  <div class="container">
+   <main>
+    <h2>
+     News &amp; Advisories
+    </h2>
+    <div class="card">
+     <h3>
+      Tanjay Fiesta Upcoming
+     </h3>
+     <p>
+      <small>
+       July 1, 2026
+      </small>
+     </p>
+     <p>
+      Opening Salvo...
+     </p>
+    </div>
+    <div class="card" style="margin-top: 15px;">
+     <h3>
+      Miss Tanjay
+     </h3>
+     <p>
+      <small>
+       July 22, 2026
+      </small>
+     </p>
+     <p>
+      Miss Tanjay 2026...
+     </p>
+    </div>
+   </main>
+   <aside>
+    <h2 id="calendar-month-year">
+     Calendar
+    </h2>
+    <table class="calendar-table">
+     <thead>
+      <tr>
+       <th>
+        SUN
+       </th>
+       <th>
+        MON
+       </th>
+       <th>
+        TUE
+       </th>
+       <th>
+        WED
+       </th>
+       <th>
+        THU
+       </th>
+       <th>
+        FRI
+       </th>
+       <th>
+        SAT
+       </th>
+      </tr>
+     </thead>
+     <tbody id="calendar-body">
+     </tbody>
+    </table>
+    <div class="card" style="margin-top: 15px; background: #f9f9f9;">
+     <h3>
+      Upcoming Event
+     </h3>
+     <p>
+      <strong>
+       Jul 1:
+      </strong>
+      Founders Day Fun Run
+     </p>
+     <p>
+      <strong>
+       Jul 2:
+      </strong>
+      Opening Worship Service
+     </p>
+    </div>
+   </aside>
+  </div>
+  <!-- Hidden Activation Modal Wrapper -->
+  <div class="modal" id="hotline-modal">
+   <div class="modal-content">
+    <button class="close-btn" id="close-modal">
+     ×
+    </button>
+    <img alt="Emergency Hotline Numbers" src="https://i.imgur.com/g1ypPb7.jpeg"/>
+   </div>
+  </div>
+  <footer>
+   <p>
+    © 2026 Tanjay LGU. All Rights Reserved.
+   </p>
+  </footer>
+  <!-- Logic Engine Script -->
+  <script src="js/script.js">
+  </script>
+ </body>
+</html>
