@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanjay City | LGU Offices</title>
     <style>
         /* Base Styles */
@@ -16,7 +16,7 @@
         
         /* --- Fixed Header Banner Container --- */
         .header-banner {
-            position: relative; /* Allows the background image to anchor inside it safely */
+            position: relative;
             color: #ffffff;
             padding: 1vh 1.5vw;
             text-align: center;
@@ -26,7 +26,7 @@
             justify-content: center;
             height: 25vh; 
             box-sizing: border-box;
-            overflow: hidden; /* Keeps the background image from spilling out of the borders */
+            overflow: hidden;
         }
 
         /* Fixed Background Layer Placement */
@@ -36,11 +36,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Fits the image beautifully without stretching it */
-            z-index: 1; /* Sits at the bottom */
+            object-fit: cover;
+            z-index: 1;
         }
 
-        /* Subtle Light Dimmer Over the Background to ensure Text Readability */
+        /* Subtle Light Dimmer Over the Background */
         .header-banner::before {
             content: "";
             position: absolute;
@@ -49,15 +49,13 @@
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.25); 
-            z-index: 2; /* Sits directly above the image */
+            z-index: 2;
         }
 
         /* Foreground Content Controls (Logos and Title) */
-        .header-logo-left,
-        .header-text,
-        .header-logo-right {
+        .header-logo-left, .header-text, .header-logo-right {
             position: relative;
-            z-index: 3; /* Forces branding to float perfectly on top */
+            z-index: 3;
         }
 
         .header-text {
@@ -65,24 +63,17 @@
             font-weight: bold; 
             letter-spacing: 2px; 
             font-family: 'Segoe UI', Impact, Arial, sans-serif; 
-            color: #0f172a; /* Sleek dark blue/slate color so it stands out */
+            color: #0f172a;
             display: flex;
             align-items: center;
             margin: 0;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); /* Gives text a light glow to remain readable over graphics */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
         }
 
-        .header-logo-left { 
-            height: 15vh; 
-            margin-right: 2.5vw; 
-        }
-        
-        .header-logo-right { 
-            height: 15vh; 
-            margin-left: 2.5vw; 
-        }
+        .header-logo-left { height: 15vh; margin-right: 2.5vw; }
+        .header-logo-right { height: 15vh; margin-left: 2.5vw; }
 
-        /* Navigation */
+        /* Navigation Menu Options */
         nav { background: #FFCE1B; color: white; display: flex; justify-content: center; align-items: center; padding: 10px 20px; }
         nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; align-items: center; }
         nav ul li a { color: black; text-decoration: none; font-weight: bold; font-size: 1.5em; transition: color 0.2s; }
@@ -118,7 +109,6 @@
             object-fit: cover; 
         }
 
-        /* Dark Overlay Filter layer to make white text pop */
         .featured::before {
             content: "";
             position: absolute;
@@ -130,10 +120,7 @@
             z-index: 2;
         }
 
-        /* Keeps Content layered securely on top of the video canvas */
-        .featured h1, 
-        .featured p, 
-        .featured .btn-container {
+        .featured h1, .featured p {
             position: relative;
             z-index: 3; 
         }
@@ -149,207 +136,102 @@
             margin: 0 0 25px 0; 
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); 
         }
-
-        .hero-btn {
-            padding: 12px 24px; 
-            background: #d9534f; 
-            border: none; 
-            cursor: pointer; 
-            font-weight: bold; 
-            font-size: 1em; 
-            border-radius: 4px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        .hero-btn a {
-            color: white; 
-            text-decoration: none;
-        }
         
-        /* Main Content Grid */
+        /* Main Grid Content Layout */
         .container { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
         .card { border: 1px solid #ddd; padding: 20px; border-radius: 5px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         main h2 { margin-top: 0; color: #004a99; border-bottom: 2px solid #004a99; padding-bottom: 5px; }
         
-        /* Calendar/Events Styling */
+        /* Calendar Framework Styles */
         .calendar-table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; }
         .calendar-table td, .calendar-table th { border: 1px solid #eee; padding: 8px; text-align: center; }
-        .calendar-table th { background-color: #f4f4f4; font-size: 0.9em; color: #333; }
+        .calendar-table th { background-color: #f4f4f4; font-size: 0.9em; }
+        .calendar-table td.today { background-color: #004a99; color: white; font-weight: bold; border-radius: 4px; }
         
-        /* Highlight Style for Today */
-        .calendar-table td.today {
-            background-color: #004a99;
-            color: white;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-        
-        /* --- Popup Modal Styles --- */
+        /* Modal Window Layout */
         .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0,0,0,0.7); 
-            justify-content: center;
-            align-items: center;
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center;
         }
         .modal-content {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 90%;
-            max-height: 85vh;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-align: center;
+            background-color: #fff; padding: 15px; border-radius: 8px; max-width: 90%; max-height: 85vh;
+            position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center;
         }
-        .modal-content img {
-            max-width: 100%;
-            max-height: 75vh;
-            display: block;
-            border-radius: 4px;
-        }
+        .modal-content img { max-width: 100%; max-height: 75vh; display: block; border-radius: 4px; }
         .close-btn {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: #d9534f;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: absolute; top: -15px; right: -15px; background: #d9534f; color: white; border: none;
+            border-radius: 50%; width: 35px; height: 35px; font-size: 1.2em; font-weight: bold; cursor: pointer;
         }
 
-        /* --- Dropdown Core Navigation Styling --- */
-        nav ul li {
-            position: relative; /* Gives the sub-menu an absolute positioning anchor */
-            display: inline-block;
-        }
-
-        /* Style the little downward arrow helper icon */
-        .arrow {
-            font-size: 0.75em;
-            margin-left: 4px;
-            vertical-align: middle;
-        }
-
-        /* Hidden Dropdown Box Menu Wrapper */
+        /* Dropdown Navigation System */
+        nav ul li { position: relative; display: inline-block; }
+        .arrow { font-size: 0.75em; margin-left: 4px; vertical-align: middle; }
         .dropdown-content {
-            display: none; /* Keeps it hidden until user actions trigger it */
-            position: absolute;
-            background-color: #ffffff;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-            border-radius: 4px;
-            top: 100%; /* Spawns it right underneath the parent button */
-            left: 0;
-            z-index: 100; /* Makes sure it floats way above any hero section or text grid below */
-            overflow: hidden;
+            display: none; position: absolute; background-color: #ffffff; min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15); border-radius: 4px; top: 100%; left: 0; z-index: 100; overflow: hidden;
         }
-
-        /* Individual Links inside the Dropdown Panel */
         .dropdown-content a {
-            color: #333333 !important; /* Forces dark readable text over white panel background */
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 0.95em !important; /* Slightly smaller cleaner text than header titles */
-            font-weight: normal !important;
-            text-align: left;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #f0f0f0;
+            color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block;
+            font-size: 0.95em !important; font-weight: normal !important; text-align: left; border-bottom: 1px solid #f0f0f0;
         }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { background-color: #f4f4f4; color: #004a99 !important; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown:hover .dropbtn { color: #004a99; }
 
-        /* Removes line constraint on final link option inside panel */
-        .dropdown-content a:last-child {
-            border-bottom: none;
-        }
-
-        /* Hover effect on internal items */
-        .dropdown-content a:hover {
-            background-color: #f4f4f4;
-            color: #004a99 !important; /* Changes text to theme blue on select hover */
-        }
-
-        /* Show the dropdown menu panel when hovering mouse cursor over the parent item */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Keep main item color stable while looking through list choices */
-        .dropdown:hover .dropbtn {
-            color: #004a99; /* Text switches highlight shade to blue overlay over gold bar background */
-        }
-        
-        /* Footer */
-        footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+        /* GovPH Multi-column Footer Layout Styling */
+        footer { background: #333; color: white; padding: 30px 20px; margin-top: 40px; font-size: 0.9em; }
+        .govph { display: flex; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: 0 auto; text-align: left; }
+        .govph .columna { flex: 0 1 120px; text-align: center; }
+        .govph .columna img { max-width: 100px; height: auto; }
+        .govph .columnb { flex: 2 1 300px; }
+        .govph .columnc, .govph .columnd { flex: 1 1 200px; }
+        .govph a { color: #FFCE1B; text-decoration: none; display: inline-block; margin-bottom: 5px; }
+        .govph a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <!-- Top Utility Bar -->
+
     <div class="utility-bar">
         <a id="hotline-trigger">Emergency Hotline Numbers</a>
     </div>
 
-    <!-- Header Banner Layout Block -->
     <header class="header-banner">
-        <!-- Background Layer -->
-        <img alt="NGC Background" class="background" src="https://i.imgur.com/U26gio6.jpeg"/>
-        <!-- Foreground Visual Layer -->
-        <img alt="Tanjay City Logo" class="header-logo-left" src="https://i.imgur.com/vXFYds0.png"/>
+        <img src="https://i.imgur.com/U26gio6.jpeg" alt="NGC Background" class="background">
+        <img src="https://i.imgur.com/vXFYds0.png" alt="Tanjay City Logo" class="header-logo-left">
         <h1 class="header-text">TANJAY CITY</h1>
-        <img alt="Display Image" class="header-logo-right" src="https://i.imgur.com/T9ymS5A.png"/>
+        <img src="https://i.imgur.com/T9ymS5A.png" alt="Display Image" class="header-logo-right">
     </header>
 
-    <!-- Navigation Menu -->
     <nav>
         <ul>
-            <li>
-                <a href="https://jastine2010.github.io/tanjaylguportal/">Home</a>
-            </li>
+            <li><a href="https://jastine2010.github.io/tanjaylguportal/">Home</a></li>
             <li class="dropdown">
-                <a class="dropbtn" href="#">Services <span class="arrow">▾</span></a>
+                <a href="#" class="dropbtn">Services <span class="arrow">&#9662;</span></a>
                 <div class="dropdown-content">
-                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" rel="noopener noreferrer" target="_blank">1. Check in</a>
-                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" rel="noopener noreferrer" target="_blank">2. Queue</a>
+                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" target="_blank" rel="noopener noreferrer">1. Check in</a>
+                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" target="_blank" rel="noopener noreferrer">2. Queue</a>
                 </div>
             </li>
-            <li>
-                <a href="#">Status</a>
-            </li>
-            <li>
-                <a href="https://jastine2010.github.io/tanjaylguportal/office.html">Offices</a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/OrlinoPepe" target="_blank">Facebook</a>
-            </li>
+            <li><a href="https://jastine2010.github.io/tanjaylguportal/office.html">Offices</a></li>
+            <li><a href="https://www.facebook.com/OrlinoPepe" target="_blank">Facebook</a></li>
         </ul>
     </nav>
 
-    <!-- Video Hero Section Area -->
     <section class="featured">
         <div class="video-stream-panel">
-            <video autoplay id="tanjayHymnVideo" loop muted playsinline>
-                <source src="https://www.dropbox.com/scl/fi/sgt1urshb1cze6ee0le3a/NGC.mp4?rlkey=gkam4h6v40oewkpb74sz9y3fw&amp;st=ze09bomr&amp;raw=1" type="video/mp4"/>
+            <video id="tanjayHymnVideo" playsinline autoplay muted loop>
+                <source src="https://www.dropbox.com/scl/fi/sgt1urshb1cze6ee0le3a/NGC.mp4?rlkey=gkam4h6v40oewkpb74sz9y3fw&st=ze09bomr&raw=1" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <h1>Welcome to Tanjay Web Portal</h1>
-        <p>The official website of Tanjay Government Center, Tanjay City.</p>
+        <p>The official website of Tanjay City Government Center, Tanjay City.</p>
     </section>
 
-    <!-- Main Dynamic Container Grid Content -->
     <div class="container">
         <main>
-            <h2>News &amp; Advisories</h2>
+            <h2>News & Advisories</h2>
             <div class="card">
                 <h3>Tanjay Fiesta Upcoming</h3>
                 <p><small>July 1, 2026</small></p>
@@ -361,20 +243,12 @@
                 <p>Miss Tanjay 2026...</p>
             </div>
         </main>
-        
+
         <aside>
             <h2 id="calendar-month-year">Calendar</h2>
             <table class="calendar-table">
                 <thead>
-                    <tr>
-                        <th>SUN</th>
-                        <th>MON</th>
-                        <th>TUE</th>
-                        <th>WED</th>
-                        <th>THU</th>
-                        <th>FRI</th>
-                        <th>SAT</th>
-                    </tr>
+                    <tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>
                 </thead>
                 <tbody id="calendar-body"></tbody>
             </table>
@@ -386,23 +260,45 @@
         </aside>
     </div>
 
-    <!-- Hidden Activation Modal Wrapper -->
-    <div class="modal" id="hotline-modal">
+    <div id="hotline-modal" class="modal">
         <div class="modal-content">
-            <button class="close-btn" id="close-modal">×</button>
-            <img alt="Emergency Hotline Numbers" src="https://i.imgur.com/g1ypPb7.jpeg"/>
+            <button class="close-btn" id="close-modal">&times;</button>
+            <img src="https://i.imgur.com/g1ypPb7.jpeg" alt="Emergency Hotline Numbers">
         </div>
     </div>
 
     <footer>
-        <p>© 2026 Tanjay LGU. All Rights Reserved.</p>
+        <div class="govph">
+            <div class="columna">
+                <img src="https://www.bayawancity.gov.ph/_images/republika.webp" alt="GovPH Seal">
+            </div>
+            <div class="columnb">
+                <strong>Republic of the Philippines</strong><br><br>
+                All content is in the public domain unless otherwise stated.<br><br>
+                © Official Website of the Local Government Unit of Tanjay<br>
+                © 2026 All Rights Reserved
+            </div>
+            <div class="columnc">
+                <strong>About GOVPH</strong><br><br>
+                Learn more about the Philippine government, its structure, how government works and the people behind it.<br><br>
+                <a href="https://www.gov.ph/">GOV.PH</a><br>
+                <a href="https://www.gov.ph/data">Open Data Portal</a><br>
+                <a href="https://www.officialgazette.gov.ph">Official Gazette</a>
+            </div>
+            <div class="columnd">
+                <strong>Government Links</strong><br><br>
+                <a href="https://op-proper.gov.ph/">Office of the President</a><br>
+                <a href="https://ovp.gov.ph/">Office of the Vice President</a><br>
+                <a href="https://www.senate.gov.ph/">Senate of the Philippines</a><br>
+                <a href="https://www.congress.gov.ph/">House of Representatives</a><br>
+                <a href="https://sc.judiciary.gov.ph/">Supreme Court</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Logic Engine Script -->
-    <script src="js/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // --- Modal Activation Elements & Logic ---
+            // Hotlines Modal Logic
             const modal = document.getElementById("hotline-modal");
             const trigger = document.getElementById("hotline-trigger");
             const closeBtn = document.getElementById("close-modal");
@@ -411,62 +307,46 @@
                 e.preventDefault();
                 modal.style.display = "flex";
             });
-
             closeBtn.addEventListener("click", function() {
                 modal.style.display = "none";
             });
-
             window.addEventListener("click", function(e) {
-                if (e.target === modal) {
-                    modal.style.display = "none";
-                }
+                if (e.target === modal) { modal.style.display = "none"; }
             });
 
-            // --- Dynamic Auto-Calendar Logic Engine ---
+            // Dynamic Auto-Calendar Engine
             const now = new Date();
             const year = now.getFullYear();
             const month = now.getMonth(); 
             const today = now.getDate();
-
-            const monthNames = ["January", "February", "March", "April", "May", "June", 
-                                "July", "August", "September", "October", "November", "December"];
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             
             document.getElementById("calendar-month-year").textContent = `${monthNames[month]} ${year}`;
-
             const calendarBody = document.getElementById("calendar-body");
             calendarBody.innerHTML = ""; 
 
             const firstDayIndex = new Date(year, month, 1).getDay();
             const totalDays = new Date(year, month + 1, 0).getDate();
-
             let dateCounter = 1;
             
             for (let i = 0; i < 6; i++) {
                 let row = document.createElement("tr");
                 let hasCells = false;
-
                 for (let j = 0; j < 7; j++) {
                     let cell = document.createElement("td");
-
                     if (i === 0 && j < firstDayIndex) {
                         cell.textContent = "";
                     } else if (dateCounter > totalDays) {
                         cell.textContent = "";
                     } else {
                         cell.textContent = dateCounter;
-                        
-                        if (dateCounter === today) {
-                            cell.classList.add("today");
-                        }
+                        if (dateCounter === today) { cell.classList.add("today"); }
                         dateCounter++;
                         hasCells = true;
                     }
                     row.appendChild(cell);
                 }
-
-                if (hasCells || i === 0) {
-                    calendarBody.appendChild(row);
-                }
+                if (hasCells || i === 0) { calendarBody.appendChild(row); }
                 if (dateCounter > totalDays) break;
             }
         });
