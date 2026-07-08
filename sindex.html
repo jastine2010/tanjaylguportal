@@ -71,7 +71,6 @@
     <!-- EXPANDED COMPREHENSIVE NAVIGATION SYSTEMS -->
     <nav class="bg-tanjay-gold text-slate-950 font-bold sticky top-0 z-40 shadow-md">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-14">
-            <!-- Left aligned desktop links with hierarchical dropdown infrastructure -->
             <div class="hidden md:flex items-center space-x-1 h-full text-xs lg:text-sm">
                 <a href="https://jastine2010.github.io/tanjaylguportal/" class="px-3 py-4 hover:bg-slate-950 hover:text-white transition flex items-center"><i class="fa-solid fa-house mr-1.5"></i> HOME</a>
                 <a href="#about-tanjay" class="px-3 py-4 hover:bg-slate-950 hover:text-white transition">ABOUT TANJAY</a>
@@ -100,15 +99,13 @@
                         SERVICES <i class="fa-solid fa-chevron-down text-[10px] ml-1.5"></i>
                     </button>
                     <div class="absolute top-full left-0 bg-white border border-slate-200 text-slate-800 font-semibold text-xs rounded-b-xl shadow-xl w-60 py-2 hidden group-hover:block animate-fadeIn">
-                        <a href="#citizen-services" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2 border-b border-slate-100">
-                            <i class="fa-solid fa-laptop-code text-indigo-600 w-4"></i> Online Transactions
+                        <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2 border-b border-slate-100">
+                            <i class="fa-solid fa-laptop-code text-indigo-600 w-4"></i> Online Queue
                         </a>
-                        <a href="#citizen-services" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2 border-b border-slate-100">
-                            <i class="fa-solid fa-file-invoice-dollar text-amber-600 w-4"></i> Business Permit
+                        <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2 border-b border-slate-100">
+                            <i class="fa-solid fa-laptop-code text-red-600 w-4"></i> Status Queue
                         </a>
-                        <a href="#citizen-services" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2">
-                            <i class="fa-solid fa-users-rectangle text-rose-600 w-4"></i> Civil Services
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -171,7 +168,7 @@
         <!-- LEFT MAIN CONTENT ARRAY (2/3 Grid Area) -->
         <main class="lg:col-span-2 space-y-12">
             
-            <!-- NEW SEGMENT: CITIZEN SERVICES PORTAL GRAPHIC HUB -->
+            <!-- CITIZEN SERVICES PORTAL GRAPHIC HUB -->
             <section id="citizen-services" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-6">
                 <div class="border-b border-slate-100 pb-3">
                     <h3 class="text-lg font-extrabold text-tanjay-blue uppercase tracking-tight flex items-center">
@@ -226,50 +223,9 @@
                 </div>
             </section>
 
-            <!-- NEW SEGMENT: INTEGRATED GEOGRAPHIC CITY MAP WINDOW -->
-            <section id="map-section" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-6">
-                <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div>
-                        <h3 class="text-lg font-extrabold text-tanjay-blue uppercase tracking-tight flex items-center">
-                            <i class="fa-solid fa-map-marked-alt mr-2.5 text-emerald-600"></i> Interactive City Map Hub
-                        </h3>
-                        <p class="text-xs text-slate-500 mt-0.5">Geospatial orientation of Tanjay boundaries, infrastructures, and operational zones.</p>
-                    </div>
-                    <!-- Mapping engine switcher mechanism -->
-                    <div class="inline-flex rounded-lg p-0.5 bg-slate-100 border border-slate-200 text-[11px] font-bold">
-                        <button class="px-3 py-1 bg-white border border-slate-200 shadow-2xs rounded-md text-blue-900">OpenStreetMap</button>
-                        <button class="px-3 py-1 text-slate-600 hover:text-slate-900 transition">Google Map</button>
-                    </div>
-                </div>
+            
 
-                <!-- Live Mock Map Canvas Element -->
-                <div class="relative bg-slate-900 border border-slate-200 rounded-xl overflow-hidden h-[300px] flex items-center justify-center text-center">
-                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-4">
-                        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest bg-slate-950/80 px-4 py-2 border border-slate-800 rounded-lg backdrop-blur-md">
-                            <i class="fa-solid fa-satellite-dish mr-2 text-emerald-400 animate-pulse"></i> OpenStreetMap Satellite Interface Engine Active
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Node Markers Quick Filtration Dashboard Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                    <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-2.5 hover:shadow-2xs transition cursor-pointer font-bold text-slate-800">
-                        <i class="fa-solid fa-landmark text-amber-500 text-sm"></i> City Hall Node
-                    </div>
-                    <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-2.5 hover:shadow-2xs transition cursor-pointer font-bold text-slate-800">
-                        <i class="fa-solid fa-building-user text-blue-600 text-sm"></i> Government Offices
-                    </div>
-                    <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-2.5 hover:shadow-2xs transition cursor-pointer font-bold text-slate-800">
-                        <i class="fa-solid fa-map-pin text-rose-500 text-sm"></i> Barangay Locations
-                    </div>
-                    <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-2.5 hover:shadow-2xs transition cursor-pointer font-bold text-slate-800">
-                        <i class="fa-solid fa-umbrella-beach text-emerald-600 text-sm"></i> Tourist Areas
-                    </div>
-                </div>
-            </section>
-
-            <!-- MANDATED COMPONENT: 21 LGU OFFICES FRAMEWORK -->
+            <!-- 21 LGU OFFICES FRAMEWORK -->
             <section id="offices-panel" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-6">
                 <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                     <div>
@@ -371,57 +327,94 @@
 
         </main>
 
-        <!-- RIGHT WIDGETS COLUMN (1/3 Grid Area) -->
+        <!-- RIGHT WIDGETS COLUMN -->
         <aside class="space-y-6">
             
-            <!-- NEW SEGMENT: EMERGENCY CONTACT PANEL -->
-            <div id="emergency-section" class="bg-linear-to-b from-red-50 to-white border-2 border-red-200 rounded-2xl p-5 shadow-xs space-y-4">
-                <div class="flex items-center justify-between border-b border-red-100 pb-2">
-                    <h3 class="font-extrabold text-sm text-red-700 tracking-tight uppercase flex items-center">
-                        <i class="fa-solid fa-truck-medical mr-2 text-base animate-pulse"></i> EMERGENCY HOTLINE NUMBERS
-                    </h3>
-                    <span class="bg-red-700 text-white font-bold text-[9px] px-1.5 py-0.5 rounded uppercase">24/7 Hotlines</span>
+            <!-- REARRANGED & FIXED EMERGENCY CONTACT PANEL -->
+<div id="emergency-section" class="bg-linear-to-b from-red-50 to-white border-2 border-red-200 rounded-2xl p-5 shadow-xs space-y-4">
+    <div class="flex items-center justify-between border-b border-red-100 pb-2">
+        <h3 class="font-extrabold text-sm text-red-700 tracking-tight uppercase flex items-center">
+            <i class="fa-solid fa-truck-medical mr-2 text-base animate-pulse"></i> EMERGENCY HOTLINE NUMBERS
+        </h3>
+        <span class="bg-red-700 text-white font-bold text-[9px] px-1.5 py-0.5 rounded uppercase">24/7 Hotlines</span>
+    </div>
+    
+    <div class="space-y-3 text-xs font-semibold">
+        <!-- PNP -->
+        <div class="p-3 bg-white border border-slate-200 rounded-xl hover:shadow-xs transition">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-lg">👮</span>
+                <span class="text-slate-800 font-bold">Police Station (PNP)</span>
+            </div>
+            <div class="flex flex-col gap-1.5 pl-7 font-mono text-red-600 font-bold text-lg">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0905-458-9497
                 </div>
-                
-                <div class="space-y-3 text-xs font-semibold">
-                    <div class="flex items-center justify-between p-2 bg-white border border-slate-200 rounded-xl">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">🚑</span>
-                            <span class="text-slate-800">City Hospital Desk</span>
-                        </div>
-                        <span class="font-mono text-red-600 font-bold">(35) 410-3062</span>
-                        <span class="font-mono text-red-600 font-bold"> / 0997-544-7572</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2 bg-white border border-slate-200 rounded-xl">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">🚒</span>
-                            <span class="text-slate-800">Fire Department (BFP)</span>
-                        </div>
-                        <span class="font-mono text-red-600 font-bold">(035) 522-4447</span>
-                        <span class="font-mono text-red-600 font-bold"> / 0917-867-4572</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2 bg-white border border-slate-200 rounded-xl">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">👮</span>
-                            <span class="text-slate-800">Police Station (PNP)</span>
-                        </div>
-                        <span class="font-mono text-red-600 font-bold">0905-458-9497</span>
-                        <span class="font-mono text-red-600 font-bold">0998-598-7501</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2 bg-white border border-slate-200 rounded-xl">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">🌊</span>
-                            <span class="text-slate-800">Disaster Risk Desk (CDRRMO)</span>
-                        </div>
-                        <span class="font-mono text-red-600 font-bold">(035) 415-3211</span>
-                    </div>
-                </div>
-                
-                <div class="p-3 bg-red-700 rounded-xl text-white text-center">
-                    <span class="block text-[10px] uppercase font-bold tracking-widest text-red-200">Centralized Emergency Hotline</span>
-                    <a href="tel:0351234567" class="block font-mono font-black text-xl mt-0.5 hover:text-tanjay-gold transition"><i class="fa-solid fa-phone mr-1.5"></i> (035) LGU-HOTLINE</a>
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0998-598-7501
                 </div>
             </div>
+        </div>
+
+        <!-- BFP -->
+        <div class="p-3 bg-white border border-slate-200 rounded-xl hover:shadow-xs transition">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-lg">🚒</span>
+                <span class="text-slate-800 font-bold">Fire Department (BFP)</span>
+            </div>
+            <div class="flex flex-col gap-1.5 pl-7 font-mono text-red-600 font-bold text-lg">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-[12px] text-slate-400"></i> (035) 522-4447
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0917-867-4572
+                </div>
+            </div>
+        </div>
+
+        <!-- City Hospital -->
+        <div class="p-3 bg-white border border-slate-200 rounded-xl hover:shadow-xs transition">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-lg">🚑</span>
+                <span class="text-slate-800 font-bold">City Hospital Desk</span>
+            </div>
+            <div class="flex flex-col gap-1.5 pl-7 font-mono text-red-600 font-bold text-lg">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-[12px] text-slate-400"></i> (035) 522-4489
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0997-544-7572
+                </div>
+            </div>
+        </div>
+
+        <!-- CDRRMO -->
+        <div class="p-3 bg-white border border-slate-200 rounded-xl hover:shadow-xs transition">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-lg">🌊</span>
+                <span class="text-slate-800 font-bold">Disaster Risk Desk (CDRRMO)</span>
+            </div>
+            <div class="flex flex-col gap-1.5 pl-7 font-mono text-red-600 font-bold text-lg">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-[12px] text-slate-400"></i> (035) 410-3062
+                </div>
+				<div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0997-251-8602
+                </div>
+				<div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-button text-[12px] text-slate-400"></i> 0928-598-7501
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="p-3 bg-red-700 rounded-xl text-white text-center">
+        <span class="block text-[10px] uppercase font-bold tracking-widest text-red-200">Centralized Emergency Hotline</span>
+        <div class="block font-mono font-black text-2xl mt-0.5 text-tanjay-gold">
+            <i class="fa-solid fa-phone mr-1.5"></i> DIAL 911 / 117
+        </div>
+    </div>
+</div>
 
             <!-- DYNAMIC CALENDAR COMPONENT -->
             <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs space-y-4">
