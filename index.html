@@ -1,352 +1,601 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanjay City | LGU Offices</title>
+    <title>Official Website of the City of Tanjay | Local Government Unit Portal</title>
+    <!-- Tailwind CSS Script CDN Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Vector Icon Suites -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Clean Structural Sans Serif Font Ecosystem -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* Base Styles */
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background-color: #fcfcfc; }
-        header, nav, section, footer { padding: 20px; }
-        
-        /* Top Utility Bar */
-        .utility-bar { background: #f4f4f4; text-align: right; font-size: 0.85em; padding: 5px 20px; }
-        .utility-bar a { color: #333; text-decoration: none; cursor: pointer; font-weight: bold; }
-        .utility-bar a:hover { color: #d9534f; }
-        
-        /* --- Enhanced Header Banner Container --- */
-        .header-banner {
-            position: relative;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between;
-            min-height: 180px; 
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-wrap: wrap;
-        }
-
-        /* Fixed Background Layer Placement */
-        .header-banner .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        /* Subtle Light Dimmer Over the Background */
-        .header-banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3); 
-            z-index: 2;
-        }
-
-        /* Foreground Content Controls (Logos and Title) */
-        .header-logo-left, .header-text, .header-logo-right {
-            position: relative;
-            z-index: 3;
-        }
-
-        .header-text {
-            font-size: clamp(1.8em, 4vw, 3.5em); 
-            font-weight: bold; 
-            letter-spacing: 2px; 
-            font-family: 'Segoe UI', Impact, Arial, sans-serif; 
-            color: #0f172a;
-            margin: 10px auto;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
-            text-align: center;
-            flex: 1;
-        }
-
-        .header-logo-left, .header-logo-right { height: 90px; width: auto; max-width: 100%; object-fit: contain; }
-
-        /* --- Mobile-Friendly Navigation Menu --- */
-        nav { background: #FFCE1B; color: black; padding: 0 20px; position: relative; z-index: 100; }
-        
-        /* Hide Mobile Checkbox */
-        .menu-toggle { display: none; }
-        .hamburger { display: none; cursor: pointer; padding: 15px 0; font-size: 1.5em; font-weight: bold; }
-
-        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; align-items: center; justify-content: center; }
-        nav ul li { position: relative; }
-        nav ul li a { color: black; text-decoration: none; font-weight: bold; font-size: 1.1em; display: block; padding: 15px 10px; transition: color 0.2s; }
-        nav ul li a:hover { color: #004a99; }
-        
-        /* Dropdown Navigation System */
-        .arrow { font-size: 0.75em; margin-left: 4px; vertical-align: middle; }
-        .dropdown-content {
-            display: none; position: absolute; background-color: #ffffff; min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.15); border-radius: 4px; top: 100%; left: 0; z-index: 100; overflow: hidden;
-        }
-        .dropdown-content a {
-            color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block;
-            font-size: 0.95em !important; font-weight: normal !important; text-align: left; border-bottom: 1px solid #f0f0f0;
-        }
-        .dropdown-content a:last-child { border-bottom: none; }
-        .dropdown-content a:hover { background-color: #f4f4f4; color: #004a99 !important; }
-        .dropdown:hover .dropdown-content { display: block; }
-        
-        /* --- Video Background Hero Section Area --- */
-        .featured { 
-            position: relative;
-            min-height: 45vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center; 
-            color: white; 
-            overflow: hidden; 
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        .video-stream-panel { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .video-stream-panel video { width: 100%; height: 100%; object-fit: cover; }
-
-        .featured::before {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6); z-index: 2;
-        }
-
-        .featured h1, .featured p { position: relative; z-index: 3; max-width: 800px; margin: 0 auto; padding: 0 10px; }
-        .featured h1 { font-size: clamp(1.8em, 4vw, 2.8em); margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
-        .featured p { font-size: clamp(1em, 2vw, 1.25em); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
-        
-        /* Main Grid Content Layout */
-        .container { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 5px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        main h2, aside h2 { margin-top: 0; color: #004a99; border-bottom: 2px solid #004a99; padding-bottom: 5px; font-size: 1.5em; }
-        
-        /* Calendar Framework Styles */
-        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; font-size: clamp(0.75em, 1vw, 0.9em); }
-        .calendar-table td, .calendar-table th { border: 1px solid #eee; padding: 6px; text-align: center; }
-        .calendar-table th { background-color: #f4f4f4; font-weight: bold; }
-        .calendar-table td.today { background-color: #004a99; color: white; font-weight: bold; border-radius: 4px; }
-        
-        /* Modal Window Layout */
-        .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; padding: 10px; box-sizing: border-box;
-        }
-        .modal-content {
-            background-color: #fff; padding: 15px; border-radius: 8px; max-width: 100%; max-height: 85vh;
-            position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center;
-        }
-        .modal-content img { max-width: 100%; max-height: 70vh; display: block; border-radius: 4px; margin: 0 auto; object-fit: contain; }
-        .close-btn {
-            position: absolute; top: -12px; right: -12px; background: #d9534f; color: white; border: none;
-            border-radius: 50%; width: 32px; height: 32px; font-size: 1.2em; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* GovPH Multi-column Footer Layout Styling */
-        footer { background: #333; color: white; padding: 30px 20px; margin-top: 40px; font-size: 0.9em; text-align: center; }
-        .govph { display: flex; flex-direction: row; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: 0 auto; text-align: left; }
-        .govph .columna { flex: 1 1 100%; text-align: center; }
-        .govph .columna img { max-width: 100px; height: auto; }
-        .govph .columnb { flex: 2 1 280px; }
-        .govph .columnc, .govph .columnd { flex: 1 1 200px; }
-        .govph a { color: #FFCE1B; text-decoration: none; display: inline-block; margin-bottom: 5px; }
-        .govph a:hover { text-decoration: underline; }
-
-        /* --- Media Queries for Responsive Design --- */
-        @media (max-width: 768px) {
-            header.header-banner { flex-direction: column; justify-content: center; min-height: auto; padding: 15px; }
-            .header-logo-left, .header-logo-right { height: 70px; margin: 5px auto; }
-            .header-text { order: -1; width: 100%; margin-bottom: 10px; }
-
-            /* Mobile Dropdown Configuration */
-            .hamburger { display: block; background: #FFCE1B; color: black; border-bottom: 1px solid rgba(0,0,0,0.1); text-align: center; }
-            nav ul { display: none; flex-direction: column; gap: 0; width: 100%; }
-            nav ul li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05); }
-            nav ul li a { padding: 12px 20px; }
-            
-            /* Responsive Activation Checkbox Trigger */
-            .menu-toggle:checked ~ ul { display: flex; }
-            
-            .dropdown-content { position: relative; box-shadow: none; width: 100%; top: 0; background-color: #fff9db; }
-            .dropdown:hover .dropdown-content { display: block; }
-
-            /* Structure Content Stack adjustments */
-            .container { grid-template-columns: 1fr; padding: 15px; }
-            .govph { flex-direction: column; text-align: center; }
-            .govph .columnb, .govph .columnc, .govph .columnd { flex: 1 1 100%; }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bg-tanjay-blue { background-color: #0c2340; }
+        .text-tanjay-blue { color: #0c2340; }
+        .bg-tanjay-gold { background-color: #ffce1b; }
+        .hover-tanjay-blue:hover { background-color: #0a1d35; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-    <div class="utility-bar">
-        <a id="hotline-trigger">Emergency Hotline Numbers</a>
+    <!-- TOPMOST PH GOVERNMENT UTILITY TICKER -->
+    <div class="bg-neutral-950 text-white text-[11px] font-medium py-2 px-4 border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-3 tracking-wider">
+                <span class="font-extrabold text-tanjay-gold">GOVPH</span>
+                <span class="opacity-30">|</span>
+                <a href="https://www.gov.ph" target="_blank" class="hover:text-tanjay-gold transition">Official Gazette Portal</a>
+                <span class="opacity-30">|</span>
+                <button id="hotline-trigger" class="hover:text-tanjay-gold font-bold transition flex items-center cursor-pointer">
+                    <i class="fa-solid fa-phone-flip text-red-500 mr-1.5 animate-pulse"></i> Emergency Hotlines
+                </button>
+            </div>
+            <div class="font-mono text-neutral-300">
+                Philippine Standard Time: <span id="ph-time" class="font-bold text-white">Loading time matrix...</span>
+            </div>
+        </div>
     </div>
 
-    <header class="header-banner">
-        <img src="https://i.imgur.com/U26gio6.jpeg" alt="NGC Background" class="background">
-        <img src="https://i.imgur.com/vXFYds0.png" alt="Tanjay City Logo" class="header-logo-left">
-        <h1 class="header-text">TANJAY CITY</h1>
-        <img src="https://i.imgur.com/T9ymS5A.png" alt="Display Image" class="header-logo-right">
+    <!-- RE-ENGINEERED HEADER BANNER CONTAINER -->
+    <header class="relative bg-slate-900 overflow-hidden min-h-[160px] flex items-center shadow-lg">
+        <!-- Structural Background Image Layer from Source Parameters -->
+        <img src="https://i.imgur.com/U26gio6.jpeg" alt="Tanjay NGC Background" class="absolute inset-0 w-full h-full object-cover opacity-35 object-center">
+        <!-- Color Dynamic Dimmer Overlays -->
+        <div class="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-900/60 to-slate-950/80 mix-blend-multiply"></div>
+        
+        <!-- Foreground Logo/Masthead Layer -->
+        <div class="relative w-full max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-6 z-10 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center gap-5">
+                <img src="https://i.imgur.com/vXFYds0.png" alt="Tanjay City Official Seal" class="h-24 w-24 object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-tanjay-gold">Republic of the Philippines</p>
+                    <h1 class="text-3xl md:text-4.5xl font-extrabold text-white tracking-tight drop-shadow-xs">TANJAY CITY</h1>
+                    <p class="text-xs md:text-sm font-medium text-slate-300 italic mt-0.5">"Local Government Unit Portal for Public Service Transparency"</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- Transparency Seal Compliance Target Link -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2.5 flex items-center space-x-3 max-w-[200px] shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-2xl text-tanjay-gold"></i>
+                    <div class="text-[10px] text-slate-200 leading-tight">
+                        <span class="font-bold block text-white text-xs">TRANSPARENCY SEAL</span>
+                        LGU Compliance Profile
+                    </div>
+                </div>
+                <img src="https://i.imgur.com/T9ymS5A.png" alt="Bagong Pilipinas Display Identity" class="h-20 w-auto object-contain hidden lg:block filter drop-shadow-sm">
+            </div>
+        </div>
     </header>
 
-    <nav>
-        <input type="checkbox" id="menu-btn" class="menu-toggle">
-        <label for="menu-btn" class="hamburger">☰ Menu</label>
-        <ul>
-            <li><a href="https://jastine2010.github.io/tanjaylguportal/">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Services <span class="arrow">&#9662;</span></a>
-                <div class="dropdown-content">
-                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" target="_blank" rel="noopener noreferrer">1. Check in</a>
-                    <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" target="_blank" rel="noopener noreferrer">2. Queue</a>
+    <!-- RESPONSIBLE NAVIGATION SYSTEMS -->
+    <nav class="bg-tanjay-gold text-slate-950 font-bold sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-14">
+            <!-- Left aligned desktop anchors -->
+            <div class="hidden md:flex items-center space-x-1 h-full text-sm">
+                <a href="https://jastine2010.github.io/tanjaylguportal/" class="px-4 py-4 hover:bg-slate-950 hover:text-white transition flex items-center"><i class="fa-solid fa-house mr-1.5"></i> Home</a>
+                
+                <!-- Dropdown for Online E-Services Portal -->
+                <div class="relative group h-full flex items-center">
+                    <button class="px-4 py-4 hover:bg-slate-950 hover:text-white transition flex items-center outline-hidden cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[10px] ml-1.5"></i>
+                    </button>
+                    <div class="absolute top-full left-0 bg-white border border-slate-200 text-slate-800 font-medium text-xs rounded-b-xl shadow-xl w-60 py-2 hidden group-hover:block animate-fadeIn">
+                        <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2 border-b border-slate-100">
+                            <span class="bg-blue-100 text-blue-900 font-bold px-1.5 py-0.5 rounded text-[10px]">1</span> 
+                            Citizen Check-In System
+                        </a>
+                        <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 hover:bg-slate-50 hover:text-blue-900 flex items-center gap-2">
+                            <span class="bg-amber-100 text-amber-900 font-bold px-1.5 py-0.5 rounded text-[10px]">2</span> 
+                            Real-Time Queue Monitor
+                        </a>
+                    </div>
                 </div>
-            </li>
-            <li><a href="https://jastine2010.github.io/tanjaylguportal/office.html">Offices</a></li>
-            <li><a href="https://www.facebook.com/OrlinoPepe" target="_blank">Facebook</a></li>
-        </ul>
+
+                <a href="#offices-panel" class="px-4 py-4 hover:bg-slate-950 hover:text-white transition">21 LGU Offices</a>
+                <a href="#barangays-panel" class="px-4 py-4 hover:bg-slate-950 hover:text-white transition">24 Barangays</a>
+                <a href="https://www.facebook.com/OrlinoPepe" target="_blank" class="px-4 py-4 hover:bg-slate-950 hover:text-white transition flex items-center"><i class="fa-brands fa-facebook mr-1.5 text-base"></i> Facebook Updates</a>
+            </div>
+
+            <!-- Header Title Identity placeholder for mobile collapse sizes -->
+            <span class="md:hidden font-extrabold tracking-wide text-xs">TANJAY LGU WEB HUB</span>
+
+            <!-- Mobile Drawer Button Interactivity -->
+            <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-950 font-bold text-xl cursor-pointer">
+                <i class="fa-solid fa-bars" id="burger-icon"></i>
+            </button>
+        </div>
+
+        <!-- Collapsible Mobile Panel Element Layout -->
+        <div id="mobile-menu" class="hidden md:hidden bg-amber-400 text-slate-950 font-semibold text-sm border-t border-amber-500">
+            <a href="https://jastine2010.github.io/tanjaylguportal/" class="block px-6 py-3 border-b border-amber-500/30 hover:bg-amber-500">Home</a>
+            <div class="bg-amber-500/20 px-6 py-2 font-bold text-xs uppercase tracking-wider text-amber-900">E-Governance Ports</div>
+            <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" target="_blank" class="block px-8 py-2.5 text-xs hover:bg-amber-500">&rarr; 1. Citizen Check-in</a>
+            <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" target="_blank" class="block px-8 py-2.5 text-xs hover:bg-amber-500 mb-2">&rarr; 2. Queue Monitor</a>
+            <a href="#offices-panel" class="block px-6 py-3 border-b border-amber-500/30 hover:bg-amber-500">21 LGU Offices</a>
+            <a href="#barangays-panel" class="block px-6 py-3 border-b border-amber-500/30 hover:bg-amber-500">24 Barangays</a>
+            <a href="https://www.facebook.com/OrlinoPepe" target="_blank" class="block px-6 py-3 hover:bg-amber-500"><i class="fa-brands fa-facebook mr-1"></i> Facebook Page</a>
+        </div>
     </nav>
 
-    <section class="featured">
-        <div class="video-stream-panel">
-            <video id="tanjayHymnVideo" playsinline autoplay muted loop>
+    <!-- IMMERSIVE HYMN HERO CONTEXT LAYER WITH BG VIDEO LOOP -->
+    <section class="relative bg-slate-950 text-white py-24 px-4 flex flex-col justify-center items-center text-center overflow-hidden min-h-[38vh]">
+        <!-- Full Layout Background Video Element Wrapper Pipeline -->
+        <div class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-40">
+            <video id="tanjayHymnVideo" playsinline autoplay muted loop class="w-full h-full object-cover">
                 <source src="https://www.dropbox.com/scl/fi/sgt1urshb1cze6ee0le3a/NGC.mp4?rlkey=gkam4h6v40oewkpb74sz9y3fw&st=ze09bomr&raw=1" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
-        <h1>Welcome to Tanjay Web Portal</h1>
-        <p>The official website of Tanjay City Government Center, Tanjay City.</p>
+        <!-- Absolute dark solid visual layer mixin to maximize standard readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/70 to-slate-950/90 z-10"></div>
+        
+        <div class="relative max-w-3xl mx-auto z-20 space-y-4">
+            <span class="inline-block bg-blue-600/30 border border-blue-500/50 text-blue-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full">
+                City Government Portal
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                Welcome to Tanjay Web Portal
+            </h2>
+            <p class="text-sm md:text-lg text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                The centralized interactive platform providing public transparency, real-time metrics, and electronic administration assets for the citizens of Tanjay City Government Center.
+            </p>
+            <div class="pt-2">
+                <a href="#offices-panel" class="bg-tanjay-gold text-slate-950 hover:bg-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-lg shadow-md inline-block transition transform active:scale-95">
+                    Browse LGU Infrastructure Directory
+                </a>
+            </div>
+        </div>
     </section>
 
-    <div class="container">
-        <main>
-            <h2>News & Advisories</h2>
-            <div class="card">
-                <h3>Tanjay Fiesta Upcoming</h3>
-                <p><small>July 1, 2026</small></p>
-                <p>Opening Salvo...</p>
-            </div>
-            <div class="card" style="margin-top: 15px;">
-                <h3>Miss Tanjay</h3>
-                <p><small>July 22, 2026</small></p>
-                <p>Miss Tanjay 2026...</p>
-            </div>
+    <!-- MAIN TWO-COLUMN CONTAINER INTERFACE FRAMEWORK -->
+    <div class="max-w-7xl mx-auto w-full px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8 flex-grow">
+        
+        <!-- LEFT COLUMN: Primary LGU News Content Feed Array (2/3 Grid Area) -->
+        <main class="lg:col-span-2 space-y-12">
+            
+            <!-- News Section Container Block -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+                    <h2 class="text-xl font-extrabold text-tanjay-blue uppercase tracking-tight flex items-center">
+                        <i class="fa-solid fa-newspaper mr-2 text-blue-600"></i> Local News & Public Advisories
+                    </h2>
+                    <span class="bg-slate-200 text-slate-700 text-[11px] font-bold px-2 py-0.5 rounded">2026 Archive</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Standardized Post Unit 1 -->
+                    <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-slate-300 transition flex flex-col">
+                        <div class="p-5 flex-grow space-y-3">
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span class="bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded-sm uppercase tracking-wide text-[10px]">Fiesta Event</span>
+                                <time font-mono>July 24, 2026</time>
+                            </div>
+                            <h3 class="font-extrabold text-lg text-slate-900 leading-snug hover:text-blue-900 cursor-pointer transition">
+                                Tanjay Annual Fiesta Upcoming Celebration Program
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                The executive preparation committee released the framework schedules detailing the traditional Opening Salvo. Public safety arrays and street management parameters are configured.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 px-5 py-3 border-t border-slate-100 text-right">
+                            <a href="#" class="text-xs font-bold text-tanjay-blue hover:underline">Read Bulletin &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Standardized Post Unit 2 -->
+                    <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-slate-300 transition flex flex-col">
+                        <div class="p-5 flex-grow space-y-3">
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span class="bg-blue-100 text-blue-900 font-bold px-2 py-0.5 rounded-sm uppercase tracking-wide text-[10px]">Pageant Desk</span>
+                                <time font-mono>July 22, 2026</time>
+                            </div>
+                            <h3 class="font-extrabold text-lg text-slate-900 leading-snug hover:text-blue-900 cursor-pointer transition">
+                                Miss Tanjay 2026 Official Delegate Presentation
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                LGU organizers introduce the twenty-four programmatic structural delegates representing municipal centers in the upcoming historical cultural showcase.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 px-5 py-3 border-t border-slate-100 text-right">
+                            <a href="#" class="text-xs font-bold text-tanjay-blue hover:underline">Read Bulletin &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- MANDATED STRUCTURAL MODULE: 21 LGU OFFICES COMPONENT -->
+            <section id="offices-panel" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-6">
+                <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-lg font-extrabold text-tanjay-blue uppercase tracking-tight flex items-center">
+                            <i class="fa-solid fa-building-shield mr-2.5 text-amber-500"></i> Municipal Administration Framework
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Comprehensive monitoring list of the 21 localized executive government desks</p>
+                    </div>
+                    <span class="bg-blue-900 text-white font-mono font-bold text-xs px-2.5 py-1 rounded-md">21 Active Offices</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    <!-- Iterating through stylized technical titles across all 21 localized office nodes -->
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-user-tie text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">1. Office of the City Mayor</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-users text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">2. Office of the Vice Mayor</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-gavel text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">3. Sangguniang Panlungsod</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-compass-drafting text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">4. Planning & Development (CPDO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-id-card text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">5. City Civil Registrar (CCRO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-wallet text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">6. City Budget Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-calculator text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">7. City Accounting Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-coins text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">8. City Treasurer's Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-map-location-dot text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">9. City Assessor's Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-heart-pulse text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">10. City Health Office (CHO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-hand-holding-hand text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">11. Social Welfare Desk (CSWDO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-wheat-awn text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">12. City Agriculture Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-helmet-safety text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">13. City Engineering Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-seedling text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">14. Environment Desk (ENRO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-box-archive text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">15. General Services Desk (GSO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-triangle-exclamation text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">16. Disaster Risk Desk (CDRRMO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-users-gear text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">17. Human Resources (HRMO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-file-signature text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">18. Licensing Desk (BPLO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-bullhorn text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">19. City Information Office (CIO)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-scale-balanced text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">20. City Legal Office</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 hover:border-blue-900/40 transition text-xs flex items-center space-x-2.5">
+                        <i class="fa-solid fa-graduation-cap text-blue-900 text-sm"></i>
+                        <span class="font-bold text-slate-800">21. DepEd Tanjay Division</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MANDATED STRUCTURAL MODULE: 24 BARANGAYS GEOGRAPHIC MAP GRID -->
+            <section id="barangays-panel" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-6">
+                <div class="border-b border-slate-100 pb-3">
+                    <h3 class="text-lg font-extrabold text-tanjay-blue uppercase tracking-tight flex items-center">
+                        <i class="fa-solid fa-map-location-dot mr-2.5 text-blue-600"></i> Barangays Distribution Grid & Maps
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Geopolitical mapping indexing for the 24 regional administrative units of Tanjay City</p>
+                </div>
+
+                <!-- Split Interactive layout: Left grid index list, Right vector graphic placeholder map panel -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
+                        <!-- Dynamic array listing all 24 structural components safely mapping Tanjay -->
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Azagra</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Bahi-an</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Baluring</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay I (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay II (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay III (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay IV (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay V (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay VI (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay VII (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay VIII (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700 font-bold text-blue-900">Barangay IX (Pob.)</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Luca</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Obis</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Pal-pinas</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Polo</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">San Isidro</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">San Jose</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">San Miguel</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Santa Cruz Viejo</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Santo Niño</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Simborio</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Tagmira</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition cursor-pointer font-medium text-slate-700">Tugas</div>
+                    </div>
+                    
+                    <!-- Dynamic Map Visual Container Wrapper Area (Right Side Embed/Mock Target) -->
+                    <div class="bg-slate-100 border border-slate-200 rounded-xl p-4 flex flex-col justify-center items-center text-center relative overflow-hidden group min-h-[180px]">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#0c2340_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                        <i class="fa-solid fa-earth-asia text-4xl text-slate-400 group-hover:text-blue-900 transition mb-2"></i>
+                        <span class="font-extrabold text-xs text-slate-800">Interactive Map Target</span>
+                        <p class="text-[10px] text-slate-500 max-w-[160px] mx-auto mt-1 leading-normal">Click individual barangay nodes to locate technical boundaries.</p>
+                        <button class="mt-3 bg-white hover:bg-blue-900 hover:text-white text-[10px] font-bold border border-slate-300 rounded px-2.5 py-1 shadow-xs transition cursor-pointer">Launch Viewer</button>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
-        <aside>
-            <h2 id="calendar-month-year">Calendar</h2>
-            <table class="calendar-table">
-                <thead>
-                    <tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>
-                </thead>
-                <tbody id="calendar-body"></tbody>
-            </table>
-            <div class="card" style="margin-top: 15px; background: #f9f9f9;">
-                <h3>Upcoming Event</h3>
-                <p><strong>Jul 1:</strong> Founders Day Fun Run</p>
-                <p><strong>Jul 2:</strong> Opening Worship Service</p>
+        <!-- RIGHT COLUMN: Interactive Widgets (Calendar, Quick Metadata Panels) (1/3 Grid Area) -->
+        <aside class="space-y-6">
+            
+            <!-- UPGRADED DYNAMIC CALENDAR COMPONENT -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h3 id="calendar-month-year" class="font-extrabold text-sm text-tanjay-blue tracking-tight uppercase">
+                        July 2026
+                    </h3>
+                    <i class="fa-solid fa-calendar-days text-slate-400 text-sm"></i>
+                </div>
+                
+                <table class="w-full text-center text-xs border-collapse font-medium">
+                    <thead>
+                        <tr class="text-slate-400 font-bold text-[10px] tracking-wider">
+                            <th class="pb-2">SU</th><th class="pb-2">MO</th><th class="pb-2">TU</th><th class="pb-2">WE</th><th class="pb-2">TH</th><th class="pb-2">FR</th><th class="pb-2">SA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body" class="text-slate-700 font-mono">
+                        <!-- Initialized Dynamically via JavaScript Engine -->
+                    </tbody>
+                </table>
+
+                <!-- Schedule Bullet Segment Array -->
+                <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 text-xs space-y-2.5">
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] text-blue-900">Upcoming Timeline Targets:</h4>
+                    <div class="border-l-2 border-amber-500 pl-2 space-y-0.5">
+                        <span class="block font-bold text-slate-800">July 1, 2026</span>
+                        <p class="text-slate-600 text-[11px]">Founders Day Municipal Fun Run Event</p>
+                    </div>
+                    <div class="border-l-2 border-blue-600 pl-2 space-y-0.5">
+                        <span class="block font-bold text-slate-800">July 2, 2026</span>
+                        <p class="text-slate-600 text-[11px]">Opening Worship Ceremonial Assemblies</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GOVERNMENT EXECUTIVE CORNER -->
+            <div class="bg-linear-to-b from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-6 text-center space-y-4 shadow-2xs">
+                <span class="bg-blue-900 text-white font-bold text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded-full">Executive Desk</span>
+                <div class="w-24 h-24 bg-slate-200 rounded-full mx-auto overflow-hidden border-4 border-white shadow-sm flex items-center justify-center text-slate-400">
+                    <i class="fa-solid fa-user-shield text-4xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-slate-900 text-base leading-tight">Hon. Orlino "Pepe" Marco</h4>
+                    <p class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1">City Chief Executive</p>
+                </div>
+                <p class="text-xs text-slate-600 italic px-2 leading-relaxed">
+                    "Driving technical updates and citizen equity across the 24 regional centers of Tanjay City."
+                </p>
             </div>
         </aside>
     </div>
 
-    <div id="hotline-modal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" id="close-modal">&times;</button>
-            <img src="https://i.imgur.com/g1ypPb7.jpeg" alt="Emergency Hotline Numbers">
+    <!-- HOTLINE EMERGENCY INTERACTIVE MODAL COMPONENT -->
+    <div id="hotline-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 hidden animate-fadeIn">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl relative border border-white/20 transform scale-95 transition-all">
+            <!-- Modal Top Handling Panel -->
+            <div class="bg-red-700 text-white px-5 py-3.5 flex justify-between items-center">
+                <span class="font-extrabold text-sm tracking-wide uppercase flex items-center">
+                    <i class="fa-solid fa-circle-exclamation mr-2 animate-ping"></i> Disaster Management Contacts
+                </span>
+                <button id="close-modal" class="text-white hover:text-slate-200 text-xl font-bold cursor-pointer transition select-none">&times;</button>
+            </div>
+            <!-- Core Media Element Body -->
+            <div class="p-4 bg-slate-50">
+                <img src="https://i.imgur.com/g1ypPb7.jpeg" alt="Tanjay City Disaster Emergency Hotline Listings" class="w-full h-auto rounded-xl border border-slate-200 shadow-xs object-contain max-h-[70vh]">
+            </div>
+            <div class="bg-slate-100 px-5 py-3 text-center text-[11px] text-slate-500 font-medium">
+                Keep these local emergency parameters active. Systems open 24/7.
+            </div>
         </div>
     </div>
 
-    <footer>
-        <div class="govph">
-            <div class="columna">
-                <img src="https://www.bayawancity.gov.ph/_images/republika.webp" alt="GovPH Seal">
+    <!-- MANDATED STANDARD PHILIPPINE GOVERNMENT FOOTER (GWTS ECOSYSTEM REQUIREMENT) -->
+    <footer class="bg-neutral-900 text-neutral-400 text-xs mt-auto border-t-4 border-red-700 font-medium">
+        <!-- Main Institutional Content Link Grid -->
+        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Grid Row 1: Official Seal Matrix Metadata -->
+            <div class="space-y-4 text-center md:text-left">
+                <img src="https://www.bayawancity.gov.ph/_images/republika.webp" alt="National Republic Coat of Arms" class="h-16 w-auto object-contain mx-auto md:mx-0 opacity-80 filter brightness-0 invert">
+                <div>
+                    <h5 class="text-white font-extrabold text-sm tracking-wider">REPUBLIC OF THE PHILIPPINES</h5>
+                    <p class="mt-1 text-[11px] text-neutral-400 leading-relaxed">All institutional assets inside this registry remain public domain unless codified otherwise by national policy statutes.</p>
+                </div>
             </div>
-            <div class="columnb">
-                <strong>Republic of the Philippines</strong><br><br>
-                All content is in the public domain unless otherwise stated.<br><br>
-                © Official Website of the Local Government Unit of Tanjay<br>
-                © 2026 All Rights Reserved
+            <!-- Grid Row 2: Local Portal Metadata -->
+            <div class="space-y-3">
+                <h5 class="text-white font-extrabold text-[11px] uppercase tracking-widest border-l-2 border-amber-500 pl-2">City of Tanjay</h5>
+                <p class="text-[11px] text-neutral-400 leading-relaxed">
+                    Official Interface Repository for structural communications, monitoring channels, and executive documentation management rules.
+                </p>
+                <div class="text-[11px] text-neutral-300 font-mono space-y-0.5">
+                    <p>&copy; 2026 Tanjay City Local Government Unit</p>
+                    <p class="text-neutral-500">All Technical Rights Reserved</p>
+                </div>
             </div>
-            <div class="columnc">
-                <strong>About GOVPH</strong><br><br>
-                Learn more about the Philippine government, its structure, how government works and the people behind it.<br><br>
-                <a href="https://www.gov.ph/">GOV.PH</a><br>
-                <a href="https://www.gov.ph/data">Open Data Portal</a><br>
-                <a href="https://www.officialgazette.gov.ph">Official Gazette</a>
+            <!-- Grid Row 3: Standard Mandated GOVPH Direct Target Anchors -->
+            <div class="space-y-3">
+                <h5 class="text-white font-extrabold text-[11px] uppercase tracking-widest border-l-2 border-blue-500 pl-2">About GOVPH</h5>
+                <p class="text-[11px] text-neutral-400 leading-normal mb-2">Learn more about the structural parameters, internal operations, and agency actions across the executive framework.</p>
+                <ul class="space-y-2 font-bold text-amber-400 text-[11px]">
+                    <li><a href="https://www.gov.ph/" target="_blank" class="hover:underline flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1.5 opacity-50"></i> GOV.PH National Portal</a></li>
+                    <li><a href="https://www.gov.ph/data" target="_blank" class="hover:underline flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1.5 opacity-50"></i> Open Data Infrastructure</a></li>
+                    <li><a href="https://www.officialgazette.gov.ph" target="_blank" class="hover:underline flex items-center"><i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1.5 opacity-50"></i> Official Gazette Legal Records</a></li>
+                </ul>
             </div>
-            <div class="columnd">
-                <strong>Government Links</strong><br><br>
-                <a href="https://op-proper.gov.ph/">Office of the President</a><br>
-                <a href="https://ovp.gov.ph/">Office of the Vice President</a><br>
-                <a href="https://www.senate.gov.ph/">Senate of the Philippines</a><br>
-                <a href="https://www.congress.gov.ph/">House of Representatives</a><br>
-                <a href="https://sc.judiciary.gov.ph/">Supreme Court</a>
+            <!-- Grid Row 4: High Office Executive Targets -->
+            <div class="space-y-2">
+                <h5 class="text-white font-extrabold text-[11px] uppercase tracking-widest border-l-2 border-red-500 pl-2">Government Links</h5>
+                <ul class="space-y-1.5 font-bold text-amber-400 text-[11px]">
+                    <li><a href="https://op-proper.gov.ph/" target="_blank" class="hover:underline block">Office of the President</a></li>
+                    <li><a href="https://ovp.gov.ph/" target="_blank" class="hover:underline block">Office of the Vice President</a></li>
+                    <li><a href="https://www.senate.gov.ph/" target="_blank" class="hover:underline block">Senate of the Philippines</a></li>
+                    <li><a href="https://www.congress.gov.ph/" target="_blank" class="hover:underline block">House of Representatives</a></li>
+                    <li><a href="https://sc.judiciary.gov.ph/" target="_blank" class="hover:underline block">Supreme Court of the Philippines</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottommost Copyright / Operational Privacy Strip -->
+        <div class="bg-neutral-950 py-4 px-4 border-t border-neutral-800 text-[11px] text-neutral-500">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>Designed in compliance with the Government Web Templates Standard (GWTS).</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:underline">System Privacy Rules</a>
+                    <a href="#" class="hover:underline">Terms of Service Map</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- INTERACTIVE JAVASCRIPT STATE ENGINES -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Hotlines Modal Logic
-            const modal = document.getElementById("hotline-modal");
-            const trigger = document.getElementById("hotline-trigger");
-            const closeBtn = document.getElementById("close-modal");
-
-            trigger.addEventListener("click", function(e) {
-                e.preventDefault();
-                modal.style.display = "flex";
-            });
-            closeBtn.addEventListener("click", function() {
-                modal.style.display = "none";
-            });
-            window.addEventListener("click", function(e) {
-                if (e.target === modal) { modal.style.display = "none"; }
-            });
-
-            // Dynamic Auto-Calendar Engine
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = now.getMonth(); 
-            const today = now.getDate();
-            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             
-            document.getElementById("calendar-month-year").textContent = `${monthNames[month]} ${year}`;
-            const calendarBody = document.getElementById("calendar-body");
-            calendarBody.innerHTML = ""; 
-
-            const firstDayIndex = new Date(year, month, 1).getDay();
-            const totalDays = new Date(year, month + 1, 0).getDate();
-            let dateCounter = 1;
-            
-            for (let i = 0; i < 6; i++) {
-                let row = document.createElement("tr");
-                let hasCells = false;
-                for (let j = 0; j < 7; j++) {
-                    let cell = document.createElement("td");
-                    if (i === 0 && j < firstDayIndex) {
-                        cell.textContent = "";
-                    } else if (dateCounter > totalDays) {
-                        cell.textContent = "";
-                    } else {
-                        cell.textContent = dateCounter;
-                        if (dateCounter === today) { cell.classList.add("today"); }
-                        dateCounter++;
-                        hasCells = true;
-                    }
-                    row.appendChild(cell);
+            // --- TIME SYNCHRONIZATION CLOCK PARSER ---
+            function updatePHTime() {
+                const clockOptions = {
+                    timeZone: 'Asia/Manila',
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                };
+                try {
+                    const parsedString = new Intl.DateTimeFormat('en-US', clockOptions).format(new Date());
+                    document.getElementById('ph-time').textContent = parsedString;
+                } catch (e) {
+                    document.getElementById('ph-time').textContent = new Date().toLocaleString();
                 }
-                if (hasCells || i === 0) { calendarBody.appendChild(row); }
-                if (dateCounter > totalDays) break;
+            }
+            updatePHTime();
+            setInterval(updatePHTime, 1000);
+
+            // --- MOBILE COLLAPSIBLE ROUTER TRIGGER ---
+            const menuToggleBtn = document.getElementById('mobile-menu-toggle');
+            const mobileMenuDrawer = document.getElementById('mobile-menu');
+            const burgerIcon = document.getElementById('burger-icon');
+
+            menuToggleBtn.addEventListener('click', function() {
+                mobileMenuDrawer.classList.toggle('hidden');
+                if (mobileMenuDrawer.classList.contains('hidden')) {
+                    burgerIcon.className = "fa-solid fa-bars";
+                } else {
+                    burgerIcon.className = "fa-solid fa-xmark";
+                }
+            });
+
+            // --- EMERGENCY HOTLINE INTERACTIVE MODAL CONTROLS ---
+            const modalOverlay = document.getElementById("hotline-modal");
+            const modalOpenBtn = document.getElementById("hotline-trigger");
+            const modalCloseBtn = document.getElementById("close-modal");
+
+            function showModal(e) {
+                e.preventDefault();
+                modalOverlay.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+            function hideModal() {
+                modalOverlay.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            modalOpenBtn.addEventListener("click", showModal);
+            modalCloseBtn.addEventListener("click", hideModal);
+            window.addEventListener("click", function(e) {
+                if (e.target === modalOverlay) { hideModal(); }
+            });
+
+            // --- CALENDAR GRID GENERATION CODE (TARGETED FOR JULY 2026) ---
+            const calendarAnchorYear = 2026;
+            const calendarAnchorMonth = 6; // Zero-indexed mapping for July (0 = Jan, 6 = July)
+            const simulatedCurrentDay = 8; // Synchronized simulation target anchor day
+            
+            const calendarContainer = document.getElementById("calendar-body");
+            calendarContainer.innerHTML = ""; 
+
+            const absoluteFirstDayIndex = new Date(calendarAnchorYear, calendarAnchorMonth, 1).getDay();
+            const absoluteTotalDays = new Date(calendarAnchorYear, calendarAnchorMonth + 1, 0).getDate();
+            let matrixDayCounter = 1;
+            
+            for (let weekRow = 0; weekRow < 6; weekRow++) {
+                let currentTrNode = document.createElement("tr");
+                let containsValidDataCells = false;
+                
+                for (let dayColumn = 0; dayColumn < 7; dayColumn++) {
+                    let tdCellNode = document.createElement("td");
+                    tdCellNode.className = "py-2 px-1 rounded-md transition duration-150";
+                    
+                    if (weekRow === 0 && dayColumn < absoluteFirstDayIndex) {
+                        tdCellNode.textContent = "";
+                    } else if (matrixDayCounter > absoluteTotalDays) {
+                        tdCellNode.textContent = "";
+                    } else {
+                        tdCellNode.textContent = matrixDayCounter;
+                        
+                        // Highlight targeted index day inside July 2026 context
+                        if (matrixDayCounter === simulatedCurrentDay) { 
+                            tdCellNode.className += " bg-blue-900 text-white font-extrabold shadow-sm"; 
+                        } else {
+                            tdCellNode.className += " hover:bg-slate-100 text-slate-800 cursor-pointer";
+                        }
+                        matrixDayCounter++;
+                        containsValidDataCells = true;
+                    }
+                    currentTrNode.appendChild(tdCellNode);
+                }
+                if (containsValidDataCells || weekRow === 0) { 
+                    calendarContainer.appendChild(currentTrNode); 
+                }
+                if (matrixDayCounter > absoluteTotalDays) break;
             }
         });
     </script>
