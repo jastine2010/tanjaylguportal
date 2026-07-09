@@ -172,7 +172,7 @@
 <body>
 
     <div class="utility-bar">
-        <div>Official Website of the City Government of Tanjay</div>
+        <div>Official Website of the Government of Tanjay City</div>
         <div class="utility-links">
             <a href="#emergency-section"><i class="fa-solid fa-phone-flip"></i> Emergency Hotlines</a>
             <a href="#transparency-seal"><i class="fa-solid fa-shield-halved"></i> Transparency Seal</a>
@@ -198,7 +198,7 @@
                 <a href="#" class="dropbtn">City Government <span class="arrow">&#9662;</span></a>
                 <div class="dropdown-content">
                     <a href="#" onclick="openDeptModal('Office of the City Mayor', 'Chief Executive Officer leading strategic development initiatives and civil execution updates across Tanjay.')">Mayor's Office</a>
-                    <a href="#offices-section">21 Offices & Departments</a>
+                    <a href="#offices-section"> Offices & Departments</a>
                     <a href="#" onclick="openDeptModal('City Council / Sangguniang Panlungsod', 'The legislative body responsible for enacting local ordinances, resolutions, and structural approvals.')">City Council</a>
                 </div>
             </li>
@@ -254,11 +254,11 @@
                         <h4>Document Requests</h4>
                         <p>Certificates & Permits</p>
                     </div>
-                    <div class="portal-item" onclick="openDeptModal('Real-Time Queue & Appointment Booking', 'Schedule on-site agency appointments or sign in directly to digital office lanes for expedited tracking.')">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <h4>Appointment System</h4>
-                        <p>Skip office waiting queues</p>
-                    </div>
+                    <div class="portal-item" onclick="openAppointmentModal()">
+    <i class="fa-solid fa-calendar-check"></i>
+    <h4>Appointment System</h4>
+    <p>Skip office waiting queues</p>
+</div>
                     <div class="portal-item" onclick="openDeptModal('Public Grievance and Complaint Form', 'Direct routing framework for localized dynamic reports, utility failure submissions, or policy suggestions.')">
                         <i class="fa-solid fa-comments-text"></i>
                         <h4>Complaint Portal</h4>
@@ -301,7 +301,7 @@
                         </div>
                     </div>
                     <div class="info-card office-node" data-name="city treasurer finance revenue collection tax">
-                        <h3>City Treasurer</h3>
+                        <h3>City Treasurer Office</h3>
                         <p>Authorized custodian of public fiscal funds, managing tax collection, dynamic real estate updates, business clearances, and resource processing systems.</p>
                         <div class="card-actions">
                             <span class="action-btn btn-primary" onclick="openDeptModal('City Treasurer Office', 'Financial tracking dashboard processing localized taxes, auxiliary community receipts, and legal fiscal documentation.')">View Page</span>
@@ -325,7 +325,7 @@
                         </div>
                     </div>
                     <div class="info-card office-node" data-name="city planning and development office cpdo master plan data project">
-                        <h3>City Planning & Development</h3>
+                        <h3>City Planning & Development Office (CPDO)</h3>
                         <p>Formulates comprehensive socio-economic development strategies, analyzes regional demographic stats, and leads urban master-planning initiatives.</p>
                         <div class="card-actions">
                             <span class="action-btn btn-primary" onclick="openDeptModal('CPDO Hub', 'Manages strategic geographic maps, economic trend analyses, and city-wide developmental blueprints.')">View Page</span>
@@ -349,7 +349,7 @@
                         </div>
                     </div>
                     <div class="info-card office-node" data-name="city social welfare office mswdo family relief support">
-                        <h3>City Social Welfare Office</h3>
+                        <h3>City Social Welfare Department Office CSWDO</h3>
                         <p>Implements social protection networks, family relief programs, senior care initiatives, PWD assistance, and crisis management support.</p>
                         <div class="card-actions">
                             <span class="action-btn btn-primary" onclick="openDeptModal('CSWDO Panel', 'Coordinates community outreach programs, emergency response resources, and protective social development services.')">View Page</span>
@@ -376,10 +376,9 @@
                 <div class="grid-cards" id="barangayContainer">
                     <script>
                         const brgys = [
-                            "Azagra", "Bahi", "Luca", "Novallas", "Balisong", "Batinguel", 
-                            "Bongalonan", "Calo", "Chapala", "Caridad", "Malalan", "Obogon", 
-                            "Pamplona", "Polo", "San Isidro", "San Jose", "San Miguel", "Santa Cruz", 
-                            "Santo Niño", "Simborio", "Tabuan", "Talaon", "Tugas", "Poblacion"
+                            "Azagra", "Bahi-an", "Luca", "Manipis", "Novallas", "Obogon", "Pal-ew", "Polo", "San Isidro", "San Jose", "San Miguel", "Santa Cruz Nuevo", 
+							"Santa Cruz Viejo", "Santo Niño", "Tugas", "Poblacion I", "Poblacion II", "Poblacion III", "Poblacion IV", "Poblacion V", "Poblacion VI",
+                            "Poblacion VII", "Poblacion VIII", "Poblacion IX"
                         ];
                         brgys.forEach((name, idx) => {
                             let padIdx = String(idx + 1).padStart(2, '0');
@@ -471,7 +470,7 @@
 
             <section id="transparency-seal" class="section-block" style="text-align: center; background: #fafafa;">
                 <h2 class="section-title" style="text-align: left;">Transparency Compliance</h2>
-                <img src="https://i.imgur.com/vXFYds0.png" alt="Transparency Seal" style="max-width: 110px; margin: 15px auto; display: block; filter: grayscale(20%);">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Philippine_Transparency_Seal.svg/330px-Philippine_Transparency_Seal.svg.png?_=20231028065532" alt="Transparency Seal" style="max-width: 110px; margin: 15px auto; display: block; filter: grayscale(20%);">
                 <p style="font-size: 0.85rem; color: var(--text-light); text-align: justify; margin-bottom: 15px;">
                     A compliance framework certifying that this local government entity completely fulfills institutional standard tracking laws by publishing fiscal budgets, procurement bids, and execution profiles transparently.
                 </p>
@@ -491,13 +490,13 @@
     <footer id="contact-footer">
         <div class="footer-grid">
             <div class="footer-col" style="text-align: center;">
-                <img src="https://www.bayawancity.gov.ph/_images/republika.webp" alt="GovPH Seal" class="gov-seal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Coat_of_arms_of_the_Philippines.svg/250px-Coat_of_arms_of_the_Philippines.svg.png" alt="GovPH Seal" class="gov-seal">
                 <p style="margin-top: 15px; color: var(--white); font-weight: bold;">Republic of the Philippines</p>
                 <p>City Government of Tanjay</p>
             </div>
             <div class="footer-col footer-contact-info">
                 <h4>Contact Channels</h4>
-                <p><i class="fa-solid fa-location-dot"></i> City Hall, National Highway, Tanjay City, Negros Oriental, Region VII</p>
+                <p><i class="fa-solid fa-location-dot"></i> City Hall, National Highway, Tanjay City, Negros Oriental, NIR</p>
                 <p><i class="fa-solid fa-phone"></i> (035) 415-1111 / (035) 415-2222</p>
                 <p><i class="fa-solid fa-envelope"></i> contact@tanjay.gov.ph</p>
                 <p><i class="fa-brands fa-facebook"></i> fb.com/CityGovernmentOfTanjay</p>
@@ -566,14 +565,7 @@
             const container = document.getElementById('modalBodyContainer');
             container.innerHTML = `
                 <h3>${title}</h3>
-                <p style="color:#475569; margin-bottom: 20px; line-height:1.7;">${description}</p>
-                <div style="background:#f8fafc; padding:15px; border-radius:6px; border:1px solid #e2e8f0; text-align:left; font-size:0.85rem; margin-bottom:20px;">
-                    <p style="margin-bottom:6px;"><strong><i class="fa-solid fa-clock" style="color:var(--primary)"></i> Office Hours:</strong> 8:00 AM - 5:00 PM (Monday - Friday)</p>
-                    <p style="margin-bottom:6px;"><strong><i class="fa-solid fa-file-shield" style="color:var(--success)"></i> Status:</strong> Production Ready / Citizen's Charter Compliant</p>
-                    <p><strong><i class="fa-solid fa-circle-info" style="color:var(--accent)"></i> Requirements:</strong> Valid Identification Card or transaction processing routing tracking reference code.</p>
-                </div>
-                <button class="action-btn btn-primary" style="width:100%; padding:12px;" onclick="closeDeptModal()">Proceed with Application Services</button>
-            `;
+                <p style="color:#475569; margin-bottom: 20px; line-height:1.7;">${description}</p>        `
             modal.style.display = "flex";
         }
 
@@ -587,6 +579,43 @@
                 closeDeptModal();
             }
         }
+		// Custom Appointment Modal featuring specific action cards
+function openAppointmentModal() {
+    const title = 'Real-Time Queue & Appointment Booking';
+    const description = `
+        Schedule on-site agency appointments or sign in directly to digital office lanes for expedited tracking.
+        
+        <!-- Interactive Link Cards -->
+        <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
+            
+            <!-- Card 1: Check In -->
+            <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec" 
+               target="_blank" 
+               style="flex: 1; min-width: 150px; padding: 20px; background: #f8fafc; border: 2px solid var(--primary); border-radius: 8px; text-align: center; color: var(--primary); transition: all 0.3s; text-decoration: none;" 
+               onmouseover="this.style.background='var(--primary)'; this.style.color='var(--white)';" 
+               onmouseout="this.style.background='#f8fafc'; this.style.color='var(--primary)';">
+                <i class="fa-solid fa-qrcode" style="font-size: 2rem; margin-bottom: 12px; display: block;"></i>
+                <h4 style="margin: 0; font-size: 1.05rem;">1. Check In</h4>
+                <span style="font-size: 0.8rem; opacity: 0.8;">Get your queue number</span>
+            </a>
+
+            <!-- Card 2: Monitor Queue -->
+            <a href="https://script.google.com/macros/s/AKfycbyDTD_H4r44m_YBBRJgT4zbfF492GjDjPJpaq6e3dwmfSmiAVo1jAPCgNR4InbWhKlqfQ/exec?page=monitor" 
+               target="_blank" 
+               style="flex: 1; min-width: 150px; padding: 20px; background: #f8fafc; border: 2px solid var(--accent); border-radius: 8px; text-align: center; color: var(--primary-dark); transition: all 0.3s; text-decoration: none;" 
+               onmouseover="this.style.background='var(--accent)'; this.style.color='var(--primary-dark)';" 
+               onmouseout="this.style.background='#f8fafc'; this.style.color='var(--primary-dark)';">
+                <i class="fa-solid fa-users-viewfinder" style="font-size: 2rem; margin-bottom: 12px; display: block;"></i>
+                <h4 style="margin: 0; font-size: 1.05rem;">2. Monitor Queue</h4>
+                <span style="font-size: 0.8rem; opacity: 0.8;">View current serving</span>
+            </a>
+            
+        </div>
+    `;
+    
+    // Push the title and custom HTML description to the existing modal router
+    openDeptModal(title, description);
+}
     </script>
 </body>
 </html>
